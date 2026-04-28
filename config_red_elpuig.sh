@@ -4,8 +4,6 @@ systemctl disable NetworkManager   #deshabilitar NetworkManager
 systemctl enable --now systemd-networkd    #habilitar systemd-networkd
 systemctl enable --now systemd-resolved    #habilitar systemd-resolved
 for file in /etc/netplan/*.yaml; do mv -- "$file" "${file%.yaml}.yaml.old"; done
-echo "introduce el valor de la IP que has recibido (se parece a esta: 10.10.x.x) - ponla SIN mascara"
-read ip
 echo "network:" > /etc/netplan/00_ipsMPO.yaml
 echo "    version: 2" >> /etc/netplan/00_ipsMPO.yaml
 echo "    renderer: networkd" >> /etc/netplan/00_ipsMPO.yaml
