@@ -15,3 +15,4 @@ echo "            dhcp4: true" >> /etc/netplan/00_ipsMPO.yaml
 chmod g-r /etc/netplan/00_ipsMPO.yaml
 chmod o-r /etc/netplan/00_ipsMPO.yaml
 netplan apply
+ip -c a
